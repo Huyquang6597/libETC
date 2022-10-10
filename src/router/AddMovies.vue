@@ -13,7 +13,7 @@
       <a-input v-model:value="movies.movie.name" />
     </a-form-item>
     <a-form-item :name="['movies', 'type']" label="Type" :rules="[{required: true, type: 'text'}]">
-      <a-input-number v-model:value="movies.movie.type" />
+      <a-input v-model:value="movies.movie.type" />
     </a-form-item>
     <a-form-item :name="['movies', 'price']" label="Price" :rules="[{required: true, type: 'number', min:1, max: 100000000000000000000000}]">
       <a-input v-model:value="movies.movie.price" />
