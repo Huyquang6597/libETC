@@ -6,3 +6,9 @@ import 'ant-design-vue/dist/antd.css';
 const app = createApp(App);
 
 app.use(Antd).mount('#app');
+
+import { Datetime } from 'vue-datetime'
+// You need a specific loader for CSS files
+import 'vue-datetime/dist/vue-datetime.css'
+
+app.use(Datetime)
