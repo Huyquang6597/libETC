@@ -1,15 +1,15 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-<!--  <router-view></router-view>-->
+  <HeaderMain />
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import HeaderMain from './components/HeaderMain.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderMain
   }
 }
 </script>
