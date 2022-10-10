@@ -1,8 +1,10 @@
 
+
+
 <template>
   <a-layout class="layout">
     <a-layout-header>
-      <div class="logo" />
+      <div class="logo"/>
       <a-menu
           v-model:selectedKeys="selectedKeys"
           theme="dark"
@@ -20,8 +22,9 @@
         <a-breadcrumb-item>List</a-breadcrumb-item>
         <a-breadcrumb-item>App</a-breadcrumb-item>
       </a-breadcrumb>
-      <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">Content
-      <TableData></TableData>
+      <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">
+        <TableData></TableData >
+
       </div>
     </a-layout-content>
     <a-layout-footer style="text-align: center">
@@ -30,15 +33,19 @@
   </a-layout>
 </template>
 <script>
+import {defineComponent, ref} from 'vue';
+import TableData from './TableData.vue'
 
-import { defineComponent, ref } from 'vue';
+
 export default defineComponent({
-  setup() {
-    return {
-      selectedKeys: ref(['2']),
-    };
-  },
-
+  components: {
+    TableData,
+    },
+    setup() {
+      return {
+        selectedKeys: ref(['2']),
+      };
+    },
 });
 </script>
 <style>
@@ -47,6 +54,7 @@ export default defineComponent({
   padding: 24px;
   background: #fff;
 }
+
 #components-layout-demo-top .logo {
   float: left;
   width: 120px;
@@ -54,6 +62,7 @@ export default defineComponent({
   margin: 16px 24px 16px 0;
   background: rgba(255, 255, 255, 0.3);
 }
+
 .ant-row-rtl #components-layout-demo-top .logo {
   float: right;
   margin: 16px 0 16px 24px;
@@ -63,3 +72,4 @@ export default defineComponent({
   background: #141414;
 }
 </style>
+

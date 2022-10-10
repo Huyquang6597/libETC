@@ -9,8 +9,13 @@
   },
   "dependencies": {
     "ant-design-vue": "^3.2.12",
+    "axios": "^1.1.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "luxon": "^3.0.4",
+    "vue": "^3.2.13",
+    "vue-datetime": "^1.0.0-beta.14",
+    "vue-sweetalert2": "^5.0.5",
+    "weekstart": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

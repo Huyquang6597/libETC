@@ -6,13 +6,11 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import TableData from './components/TableData.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    TableData,
+    HelloWorld
   }
 }
 </script>
