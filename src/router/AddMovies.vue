@@ -6,16 +6,16 @@
       :validate-messages="validateMessages"
       @finish="onFinish"
   >
-    <a-form-item :name="['movies', 'id']" label="Id" :rules="[{ required: true }]">
-      <a-input v-model:value="movies.movie.id" />
-    </a-form-item>
-    <a-form-item :name="['movies', 'name']" label="Name" :rules="[{ required: true, type: 'text' }]">
+<!--    <a-form-item :name="['movies', 'id']" label="Id" :rules="[{ required: true }]">-->
+<!--      <a-input v-model:value="movies.movie.id" />-->
+<!--    </a-form-item>-->
+    <a-form-item :name="['movies', 'name']" label="Name" :rules="[{ required: false}]">
       <a-input v-model:value="movies.movie.name" />
     </a-form-item>
-    <a-form-item :name="['movies', 'type']" label="Type" :rules="[{required: true, type: 'text'}]">
+    <a-form-item :name="['movies', 'type']" label="Type" :rules="[{required: false}]">
       <a-input v-model:value="movies.movie.type" />
     </a-form-item>
-    <a-form-item :name="['movies', 'price']" label="Price" :rules="[{required: true, type: 'number', min:1, max: 100000000000000000000000}]">
+    <a-form-item :name="['movies', 'price']" label="Price" :rules="[{required: false}]">
       <a-input v-model:value="movies.movie.price" />
     </a-form-item>
     <a-form-item :name="['movies', 'time']" label="Time">
@@ -24,22 +24,22 @@
     <a-form-item :name="['movies', 'premiereDate']" label="Premiere Date">
       <a-textarea v-model:value="movies.movie.premiereDate" />
     </a-form-item>
-    <a-form-item :name="['movies', 'description']" label="Description" :rules="[{required: true}]">
+    <a-form-item :name="['movies', 'description']" label="Description" :rules="[{required: false}]">
       <a-textarea v-model:value="movies.movie.description" />
     </a-form-item>
-    <a-form-item :name="['movies', 'statuss']" label="Status" :rules="[{ required: true,type: 'number', min: 1, max: 99 }]">
+    <a-form-item :name="['movies', 'statuss']" label="Status" :rules="[{ required: false, min: 1, max: 99 }]">
       <a-textarea v-model:value="movies.movie.statuss" />
     </a-form-item>
-    <a-form-item :name="['movies', 'tickets']" label="Tickets" :rules="[{required: true,type: 'number', min:1, max: 200000}]">
+    <a-form-item :name="['movies', 'tickets']" label="Tickets" :rules="[{required: false, min:1, max: 200000}]">
       <a-textarea v-model:value="movies.movie.tickets" />
     </a-form-item>
-    <a-form-item :name="['movies', 'production']" label="Production" :rules="[{required: true}]">
+    <a-form-item :name="['movies', 'production']" label="Production" :rules="[{required: false}]">
       <a-textarea v-model:value="movies.movie.production" />
     </a-form-item>
-    <a-form-item :name="['movies', 'director']" label="Director" :rules="[{required: true}]">
+    <a-form-item :name="['movies', 'director']" label="Director" :rules="[{required: false}]">
       <a-textarea v-model:value="movies.movie.director" />
     </a-form-item>
-    <a-form-item :name="['movies', 'actor']" label="Actor" :rules="[{required: true}]">
+    <a-form-item :name="['movies', 'actor']" label="Actor" :rules="[{required: false}]">
       <a-textarea v-model:value="movies.movie.actor" />
     </a-form-item>
 
@@ -82,7 +82,7 @@ export default defineComponent({
         introduction: '',
       },
       movie: {
-        id: 1,
+        // id: 1,
         name: '',
         type: '',
         time: '',
