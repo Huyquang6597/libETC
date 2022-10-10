@@ -1,8 +1,10 @@
 <template>
   <a-table :columns="columns" :data-source="data" bordered>
-    <template #bodyCell="{ column, text }">
-      <template v-if="column.dataIndex === 'name'">
-        <a>{{ text }}</a>
+    <template #bodyCell="{ column, record }">
+
+      <template v-if="column.dataIndex === 'action'">
+        <a-button type="primary" >Edit</a-button>
+        <a-button type="danger" @click="this.deleteMovie(record.id)">Delete</a-button>
       </template>
     </template>
     <template #title>Header</template>
@@ -102,6 +104,11 @@ export default defineComponent({
         title: 'Actors',
         dataIndex: 'actor',
         key: 'actor',
+      },
+      {
+        title: 'Action',
+        dataIndex: 'action',
+        key: 'action',
       }]);
 
 
@@ -113,6 +120,7 @@ export default defineComponent({
   mounted() {
     this.getMovies();
 },
+
   methods: {
     async getMovies() {
       await axios.get(`${baseUrl}/get-all`)
@@ -122,8 +130,32 @@ export default defineComponent({
             return response.data;
           });
     },
-  }
+
+    deleteMovie(id) {
+      console.log(id)
+      axios.delete(`${baseUrl}/delete?id=${id}`)
+          .then(response => {
+            console.log(response)
+            this.getMovies();
+          }
+          )
+          .catch(error => {
+            console.log(error);
+          });
+  },
+
+    findMoviesById(id) {
+      axios.get(`${baseUrl}/search-by-id?id=${id}`)
+          .then(response => {
+            this.valueAdd = response.data[0];
+          })
+          .catch(error => {
+            console.log(error);
+          })
+    },
+  },
 });
+
 
 </script>
 <style>
