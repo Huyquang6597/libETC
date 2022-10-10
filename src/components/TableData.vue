@@ -142,11 +142,14 @@ export default defineComponent({
             return response.data;
           });
     },
-  },
+
+
+
 
    mounted() {
     this.getMovies();
-  }
+  },
+}
 });
 
 </script>

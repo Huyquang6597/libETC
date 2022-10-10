@@ -1,27 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HelloWorld from "@/components/HelloWorld";
 import TableData from "@/components/TableData";
-import AddMovies from "@/components/AddMovies";
+import AddMovies from "@/router/AddMovies";
 
 const routes = [
+
     {
         path: '/',
-        component: HelloWorld
-    },
-    {
-        path: '/tableData',
         component: TableData
     },
     {
-        path: '/addMovies',
+        path: '/add',
         component: AddMovies
     },
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: routes
+    routes
 })
 
 export default router
